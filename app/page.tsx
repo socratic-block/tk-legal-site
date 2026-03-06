@@ -78,7 +78,7 @@ export default function Home() {
             <span className="text-indigo-600">✓</span> Fully Licensed & Registered
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-indigo-600">✓</span> English, Georgian
+            <span className="text-indigo-600">✓</span> English, Georgian.
           </div>
           <div className="flex items-center gap-2">
             <span className="text-indigo-600">✓</span> Remote Services Available
