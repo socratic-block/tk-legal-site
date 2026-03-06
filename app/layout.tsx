@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+// 1. Import the Providers component you created in the app folder
+import { Providers } from "./providers"; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    // 2. Add suppressHydrationWarning to prevent UI flicker errors
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* 3. Wrap your children in the Providers */}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
