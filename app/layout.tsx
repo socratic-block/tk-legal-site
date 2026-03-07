@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
+"use client";
+
+import dynamic from "next/dynamic";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Providers } from "./providers"; 
-import Navbar from "./components/Navbar"; // 1. Import Navbar
-import Footer from "./components/Footer"; // 2. Import Footer
+import { Providers } from "./providers";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,10 +17,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "TK Legal Georgia",
-  description: "Legal advice for foreigners in Georgia",
-};
+// We load the 3D Glow here so it stays on for the whole site
+const GlobalCanvas = dynamic(() => import("./components/canvas/GlobalCanvas"), {
+  ssr: false,
+});
 
 export default function RootLayout({
   children,
@@ -27,16 +29,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      {/* 3. Added flexbox classes to ensure the footer sticks to the bottom */}
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-background text-foreground`}>
         <Providers>
-          <Navbar />
+          {/* THE GLOBAL LAMP: Now it's in the 'frame' of the house */}
+          <GlobalCanvas />
           
-          {/* 4. flex-1 acts like a spring, pushing the footer down */}
-          <main className="flex-1 flex flex-col">
+          <Navbar />
+          {/* The 'children' below are your Home or About pages */}
+          <main className="flex-1 relative z-10 flex flex-col">
             {children}
           </main>
-          
           <Footer />
         </Providers>
       </body>

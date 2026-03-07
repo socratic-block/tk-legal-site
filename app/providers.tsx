@@ -3,11 +3,10 @@
 import { ThemeProvider } from 'next-themes';
 import { useEffect, useState } from 'react';
 
+// We must use "export function" so layout.tsx can find it
 export function Providers({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
-  // This ensures the theme is only applied after the component mounts
-  // to prevent hydration errors
   useEffect(() => {
     setMounted(true);
   }, []);
