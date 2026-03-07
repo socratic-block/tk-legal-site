@@ -24,18 +24,17 @@ export default function AboutPage() {
           <div className="space-y-6">
             <p>
               Navigating a foreign legal system requires more than just translation—it requires 
-              strategic foresight. As specialists in **Civil Law**, we provide the protective 
+              strategic foresight. As specialists in <span className="text-foreground font-bold">Civil Law</span>, we provide the protective 
               framework needed for expats to thrive in Georgia.
             </p>
             <p>
-              With over **5 years of dedicated experience** in the field and full licensing to 
+              With over <span className="text-foreground font-bold text-indigo-400">5 years of dedicated experience</span> in the field and full licensing to 
               operate, TK Legal Georgia stands as a bridge between complex bureaucracy and 
               your peace of mind.
             </p>
           </div>
           
-          {/* Featured Quote Card with Backdrop Blur */}
-          <div className="p-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl relative overflow-hidden group">
+          <div className="p-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 left-0 w-1 h-full bg-indigo-500" />
             <h2 className="text-2xl font-bold text-foreground mb-4 italic">Institutional Standard</h2>
             <p className="text-indigo-400 font-medium text-xl leading-snug">
@@ -45,7 +44,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Credentials Grid using your established "Pop" physics */}
         <section>
           <h2 className="text-4xl font-bold mb-12 tracking-tight">Our Foundation</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
