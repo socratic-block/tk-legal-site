@@ -6,16 +6,24 @@
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
+  --card: #ffffff;           /* Pure white for light mode */
+  --card-foreground: #0f172a;
+  --border: #e2e8f0;         /* Soft gray border */
 }
 
 .dark {
-  --background: #020617; 
+  --background: #020617;     /* Midnight Navy */
   --foreground: #f8fafc;
+  --card: #0f172a;           /* Slightly lighter navy to show "elevation" */
+  --card-foreground: #f8fafc;
+  --border: #1e293b;         /* Muted border that doesn't "glow" */
 }
 
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
 }
 
 body {
