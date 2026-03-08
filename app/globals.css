@@ -6,9 +6,9 @@
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
-  --card: #ffffff;           /* Pure white for light mode */
+  --card: #f8fafc;           /* Light grayish white for contrast */
   --card-foreground: #0f172a;
-  --border: #e2e8f0;         /* Soft gray border */
+  --border: #e2e8f0;         /* Visible soft gray border */
 }
 
 .dark {

@@ -10,13 +10,13 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-32">
+    <div className="max-w-7xl mx-auto px-6 py-12">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 200, damping: 25 }}
       >
-        <h1 className="text-6xl md:text-7xl font-extrabold tracking-tighter mb-12">
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter mb-12 text-center">
           Expert Advocacy for the <span className="bg-gradient-to-r from-indigo-500 to-sky-400 bg-clip-text text-transparent">Global Expat.</span>
         </h1>
         
